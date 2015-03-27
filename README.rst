@@ -23,8 +23,8 @@ Notes uses generic relations to handle attaching themselves to models. So instal
 4. To enable easy management you can add a hook to your model:
 
         from notes.models import Note
-        from django.contrib.contenttypes import generic
-        notes = generic.GenericRelation(Note)
+        from django.contrib.contenttypes.fields import GenericRelation
+        notes = GenericRelation(Note)
 
 Usage
 ------
