@@ -17,6 +17,7 @@ class Note(TimeStampedModel):
     public = models.BooleanField(_('Public'), default=True)
     author = models.ForeignKey(User, blank=True, null=True)
     content_type = models.ForeignKey(ContentType)
+    object_id = models.AutoField()
     content_object = generic.GenericForeignKey("content_type", "object_id")
 
     objects = models.Manager()
