@@ -17,7 +17,11 @@ class Note(TimeStampedModel):
     public = models.BooleanField(_('Public'), default=True)
     author = models.ForeignKey(User, blank=True, null=True)
     content_type = models.ForeignKey(ContentType)
-    object_id = models.AutoField(primary_key=True)
+<<<<<<< HEAD
+    object_id = models.AutoField()
+=======
+    object_id = models.PositiveIntegerField()
+>>>>>>> parent of 719585f... making object id auto increment
     content_object = generic.GenericForeignKey("content_type", "object_id")
 
     objects = models.Manager()
